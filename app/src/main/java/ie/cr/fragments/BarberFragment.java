@@ -191,16 +191,16 @@ public class BarberFragment  extends ListFragment implements View.OnClickListene
                 Barber randomBarber = barberList.get(new Random()
                         .nextInt(barberList.size()));
 
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText(randomBarber.barberName);
+                /*((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText(randomBarber.barberName);
                 ((TextView) getActivity().findViewById(R.id.favouriteBarberShop)).setText(randomBarber.shop);
                 ((TextView) getActivity().findViewById(R.id.favouriteBarberPrice)).setText("€ " + randomBarber.price);
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberRating)).setText(randomBarber.rating + " *");
+                ((TextView) getActivity().findViewById(R.id.favouriteBarberRating)).setText(randomBarber.rating + " *");*/
             }
             else {
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText("N/A");
+                /*((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText("N/A");
                 ((TextView) getActivity().findViewById(R.id.favouriteBarberShop)).setText("N/A");
                 ((TextView) getActivity().findViewById(R.id.favouriteBarberPrice)).setText("N/A");
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberRating)).setText("N/A");
+                ((TextView) getActivity().findViewById(R.id.favouriteBarberRating)).setText("N/A");*/
             }
     }
 

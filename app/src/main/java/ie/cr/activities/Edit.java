@@ -40,7 +40,7 @@ public class Edit extends Base {
             editFavourite.setImageResource(R.drawable.red_favourites_72);
             isFavourite = true;
         } else {
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.red_favourites_72);
             isFavourite = false;
         }
     }
@@ -86,7 +86,7 @@ public class Edit extends Base {
             aBarber.favourite = false;
             Toast.makeText(this,"Removed From Favourites",Toast.LENGTH_SHORT).show();
             isFavourite = false;
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.red_favourites_72);
         } else {
             aBarber.favourite = true;
             Toast.makeText(this,"Added to Favourites !!",Toast.LENGTH_SHORT).show();

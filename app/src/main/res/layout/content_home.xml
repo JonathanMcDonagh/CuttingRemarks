@@ -18,71 +18,55 @@
         android:text="@string/searchBarbersLbl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <Button
         android:id="@+id/addBtn"
         android:layout_width="93dp"
         android:layout_height="119dp"
         android:background="@color/colorFontOffWhite"
-        android:drawableTop="@drawable/red_addbtn_72"
+        android:drawableTop="@drawable/red_add_btn72"
         android:onClick="add"
         android:text="@string/addABarberLbl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <Button
         android:id="@+id/favouritesBtn"
         android:layout_width="93dp"
-        android:layout_height="119dp"
+        android:layout_height="116dp"
         android:background="@color/colorFontOffWhite"
         android:drawableTop="@drawable/favourites_72"
         android:onClick="favourites"
         android:text="@string/favouritesBarberLbl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <TextView
         android:id="@+id/addBarTV"
         android:layout_width="0dp"
         android:layout_height="21dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorFontWhite"
         android:text="@string/recentlyViewedLbl"
         android:textAlignment="center"
-        android:textColor="@color/colorFontWhite"
+        android:textColor="@color/colorFontBlack"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addBtn"
-        app:layout_constraintVertical_bias="0.027" />
-
-    <TextView
-        android:id="@+id/footer"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:background="@color/colorFontOffWhite"
-        android:paddingTop="5dp"
-        android:textAlignment="center"
-        android:textColor="@color/colorFontWhite"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <TextView
         android:id="@+id/emptyList"
@@ -101,13 +85,14 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
-        android:layout_height="499dp"
-        app:layout_constraintBottom_toTopOf="@+id/footer"
+        android:layout_height="454dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addBarTV"
-        app:layout_constraintVertical_bias="0.04000002">
+        app:layout_constraintVertical_bias="1.0">
 
     </FrameLayout>
 

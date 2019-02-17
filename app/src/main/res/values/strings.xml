@@ -7,6 +7,8 @@
     <string name="appAbout">About Cutting Remarks</string>
     <string name="developer">Jonathan McDonagh</string>
 
+
+    <string name="barbersrow">Barbers</string>
     <string name="searchBarbersLbl">Search Barber\'s</string>
     <string name="favouritesBarberLbl">Favourite Barber\'s</string>
     <string name="addABarberLbl">Barber Check In</string>
