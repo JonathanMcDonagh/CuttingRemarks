@@ -19,6 +19,12 @@
     <string name="barberRatingLbl">Star Rating</string>
     <string name="barberDetailsLbl">Full Barber Details</string>
     <string name="informationLbl">Information</string>
-    <string name="emptyMessageLbl">You have no Barber\'s added, go get a haircut!</string>
+    <string name="emptyMessageLbl">You have no Barber\'s added, go get a haircut you probably need one!</string>
     <string name="deleteBarbersLbl">Delete Barbers</string>
+
+    <string-array name="barberTypes">
+        <item>All Types</item>
+        <item>Favourites</item>
+        <item>\> 3\* Rating</item>
+    </string-array>
 </resources>

@@ -12,13 +12,20 @@ import java.util.ArrayList;
 
 import ie.cr.R;
 import ie.cr.fragments.BarberFragment;
+import ie.cr.main.CuttingRemarksApp;
 import ie.cr.models.Barber;
 
 public class Base extends AppCompatActivity {
 
-    public static ArrayList<Barber> barberList = new ArrayList<Barber>();
+    public CuttingRemarksApp app;
     public Bundle activityInfo;
     public BarberFragment barberFragment;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        app = (CuttingRemarksApp) getApplication();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

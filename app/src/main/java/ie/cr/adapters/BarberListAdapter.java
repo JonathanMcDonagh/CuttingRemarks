@@ -28,7 +28,7 @@ public class BarberListAdapter extends ArrayAdapter<Barber>
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         BarberItem item = new BarberItem(context, parent,
-                                         deleteListener, barberList.get(position));
+                deleteListener, barberList.get(position));
         return item.view;
     }
 
@@ -37,5 +37,8 @@ public class BarberListAdapter extends ArrayAdapter<Barber>
         return barberList.size();
     }
 
-
+    @Override
+    public Barber getItem(int position) {
+        return barberList.get(position);
+    }
 }

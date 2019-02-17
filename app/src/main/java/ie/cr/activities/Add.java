@@ -46,8 +46,8 @@ public class Add extends Base {
             Barber c = new Barber(barberName, barberShop, ratingValue,
                     barberPrice, false);
 
-            Log.v("barbermate","Add : " + barberList);
-            barberList.add(c);
+            Log.v("Cutting Remarks","Add : " + app.barberList);
+            app.barberList.add(c);
             startActivity(new Intent(this, Home.class));
         } else
             Toast.makeText(

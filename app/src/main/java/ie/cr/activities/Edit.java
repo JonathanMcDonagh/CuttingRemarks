@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import ie.cr.R;
 import ie.cr.models.Barber;
-
 public class Edit extends Base {
     public Context context;
     public boolean isFavourite;
@@ -28,19 +27,17 @@ public class Edit extends Base {
         activityInfo = getIntent().getExtras();
         aBarber = getBarberObject(activityInfo.getString("barberId"));
 
-        Log.v("barbermate", "EDIT : " + aBarber);
-
         ((TextView)findViewById(R.id.editTitleTV)).setText(aBarber.barberName);
 
         ((EditText)findViewById(R.id.editNameET)).setText(aBarber.barberName);
-        ((TextView)findViewById(R.id.editShopET)).setText(aBarber.shop);
+        ((EditText)findViewById(R.id.editShopET)).setText(aBarber.shop);
         ((EditText)findViewById(R.id.editPriceET)).setText(""+aBarber.price);
         ((RatingBar) findViewById(R.id.editRatingBar)).setRating((float)aBarber.rating);
 
         editFavourite = findViewById(R.id.editFavourite);
 
         if (aBarber.favourite == true) {
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.red_favourites_72);
             isFavourite = true;
         } else {
             editFavourite.setImageResource(R.drawable.favourites_72);
@@ -50,13 +47,12 @@ public class Edit extends Base {
 
     private Barber getBarberObject(String id) {
 
-        for (Barber c : barberList)
+        for (Barber c : app.barberList)
             if (c.barberId.equalsIgnoreCase(id))
                 return c;
 
         return null;
     }
-
 
     public void saveBarber(View v) {
 
@@ -81,21 +77,21 @@ public class Edit extends Base {
             startActivity(new Intent(this,Home.class));
 
         } else
-            Toast.makeText(this, "You must Enter Something for Name and Shop", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You need to enter name and shop",Toast.LENGTH_SHORT).show();
     }
 
     public void toggle(View view) {
 
         if (isFavourite) {
             aBarber.favourite = false;
-            Toast.makeText(this,"Removed From Favourites", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Removed From Favourites",Toast.LENGTH_SHORT).show();
             isFavourite = false;
             editFavourite.setImageResource(R.drawable.favourites_72);
         } else {
             aBarber.favourite = true;
-            Toast.makeText(this,"Added to Favourites !!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Added to Favourites !!",Toast.LENGTH_SHORT).show();
             isFavourite = true;
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.red_favourites_72);
         }
     }
 }
