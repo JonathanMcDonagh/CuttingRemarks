@@ -37,9 +37,7 @@ public class BarberFragment  extends Fragment implements
     public BarberFilter barberFilter;
     public boolean favourites = false;
 
-    public BarberFragment() {
-        // Required empty public constructor
-    }
+    public BarberFragment() { }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

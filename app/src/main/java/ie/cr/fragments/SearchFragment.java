@@ -20,9 +20,7 @@ public class SearchFragment extends BarberFragment
     String selected;
     SearchView searchView;
 
-    public SearchFragment() {
-        // Required empty public constructor
-    }
+    public SearchFragment() { }
 
     public static SearchFragment newInstance() {
         SearchFragment fragment = new SearchFragment();

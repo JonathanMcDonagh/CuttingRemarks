@@ -15,8 +15,8 @@ import ie.cr.main.CuttingRemarksApp;
 public class Base extends AppCompatActivity {
 
     public CuttingRemarksApp app;
-    public Bundle activityInfo; // Used for persistence (of sorts)
-    public BarberFragment barberFragment; // How we'll 'share' our List of Barbers between Activities
+    public Bundle activityInfo;
+    public BarberFragment barberFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class Base extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                       // we could put some code here too
+
                     }
                 })
                 .show();

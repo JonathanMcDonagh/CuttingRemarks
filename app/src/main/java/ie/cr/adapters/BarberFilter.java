@@ -76,6 +76,6 @@ public class BarberFilter extends Filter {
 			adapter.notifyDataSetInvalidated();
 			adapter.barberList = originalBarberList;
 		}
-		Log.v("barbermate", "publishResults : " + adapter.barberList);
+		Log.v("Cutting Remarks", "publishResults : " + adapter.barberList);
 	}
 }
