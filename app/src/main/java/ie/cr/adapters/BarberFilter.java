@@ -14,7 +14,7 @@ public class BarberFilter extends Filter {
 	public BarberListAdapter adapter;
 
 	public BarberFilter(List<Barber> originalBarberList, String filterText,
-						BarberListAdapter adapter) {
+                        BarberListAdapter adapter) {
 		super();
 		this.originalBarberList = originalBarberList;
 		this.filterText = filterText;
@@ -42,9 +42,9 @@ public class BarberFilter extends Filter {
 					for (Barber c : originalBarberList)
 						if (c.favourite)
 							newBarbers.add(c);
-				}
-				results.values = newBarbers;
-				results.count = newBarbers.size();
+					}
+					results.values = newBarbers;
+					results.count = newBarbers.size();
 			}
 		} else {
 			String prefixString = prefix.toString().toLowerCase();
@@ -64,6 +64,7 @@ public class BarberFilter extends Filter {
 		return results;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void publishResults(CharSequence prefix, FilterResults results) {
 
@@ -75,6 +76,6 @@ public class BarberFilter extends Filter {
 			adapter.notifyDataSetInvalidated();
 			adapter.barberList = originalBarberList;
 		}
-		Log.v("Cutting Remarks", "publishResults : " + adapter.barberList);
+		Log.v("barbermate", "publishResults : " + adapter.barberList);
 	}
 }

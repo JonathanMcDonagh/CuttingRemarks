@@ -13,14 +13,14 @@ import ie.cr.R;
 import ie.cr.models.Barber;
 
 public class BarberItem {
-    View view;
+    public View view;
 
     public BarberItem(Context context, ViewGroup parent,
                       View.OnClickListener deleteListener, Barber barber)
     {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = inflater.inflate(R.layout.barberrow, parent, false);
+        view = inflater.inflate(R.layout.barbercard, parent, false);
         view.setTag(barber.barberId);
 
         updateControls(barber);

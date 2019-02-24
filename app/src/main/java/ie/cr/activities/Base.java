@@ -8,18 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-
 import ie.cr.R;
 import ie.cr.fragments.BarberFragment;
 import ie.cr.main.CuttingRemarksApp;
-import ie.cr.models.Barber;
 
 public class Base extends AppCompatActivity {
 
     public CuttingRemarksApp app;
-    public Bundle activityInfo;
-    public BarberFragment barberFragment;
+    public Bundle activityInfo; // Used for persistence (of sorts)
+    public BarberFragment barberFragment; // How we'll 'share' our List of Barbers between Activities
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +43,9 @@ public class Base extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                       // we could put some code here too
                     }
                 })
                 .show();
-    }
-
-    public void menuHelp(MenuItem m) {
-        startActivity(new Intent(this, Help.class));
     }
 }

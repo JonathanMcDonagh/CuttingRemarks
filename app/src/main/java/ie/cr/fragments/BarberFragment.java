@@ -1,11 +1,10 @@
 package ie.cr.fragments;
 
 import android.app.AlertDialog;
-import android.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,33 +22,39 @@ import java.util.Random;
 
 import ie.cr.R;
 import ie.cr.activities.Base;
-import ie.cr.activities.Edit;
-import ie.cr.activities.Favourites;
 import ie.cr.adapters.BarberFilter;
 import ie.cr.adapters.BarberListAdapter;
 import ie.cr.models.Barber;
 
-public class BarberFragment  extends ListFragment implements View.OnClickListener,
+public class BarberFragment  extends Fragment implements
+        AdapterView.OnItemClickListener,
+        View.OnClickListener,
         AbsListView.MultiChoiceModeListener
 {
     public Base activity;
     public static BarberListAdapter listAdapter;
     public ListView listView;
     public BarberFilter barberFilter;
+    public boolean favourites = false;
 
-    public BarberFragment() { }
+    public BarberFragment() {
+        // Required empty public constructor
+    }
 
     @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Bundle activityInfo = new Bundle(); // Creates a new Bundle object
+        activityInfo.putString("barberId", (String) view.getTag());
 
-        Bundle activityInfo = new Bundle();
-        activityInfo.putString("barberId", (String) v.getTag());
-        Intent goEdit = new Intent(getActivity(), Edit.class);
+        Fragment fragment = EditFragment.newInstance(activityInfo);
+        getActivity().setTitle(R.string.editBarberLbl);
 
-        goEdit.putExtras(activityInfo);
-        getActivity().startActivity(goEdit);
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.homeFrame, fragment)
+                .addToBackStack(null)
+                .commit();
     }
+
 
     public static BarberFragment newInstance() {
         BarberFragment fragment = new BarberFragment();
@@ -66,28 +72,39 @@ public class BarberFragment  extends ListFragment implements View.OnClickListene
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        listAdapter = new BarberListAdapter(activity, this, activity.app.barberList);
-        barberFilter = new BarberFilter(activity.app.barberList,"all",listAdapter);
-
-        if (getActivity() instanceof Favourites) {
-            barberFilter.setFilter("favourites");
-            barberFilter.filter(null);
-            listAdapter.notifyDataSetChanged();
-        }
-        setListAdapter (listAdapter);
-        setRandomBarber();
-        checkEmptyList();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        View v = super.onCreateView(inflater, parent, savedInstanceState);
 
-        listView = v.findViewById(android.R.id.list);
-        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-        listView.setMultiChoiceModeListener(this);
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_home, parent, false);
+        getActivity().setTitle(R.string.recentlyViewedLbl);
+        listAdapter = new BarberListAdapter(activity, this, activity.app.barberList);
+        barberFilter = new BarberFilter(activity.app.barberList,"all",listAdapter);
+
+        if (favourites) {
+            getActivity().setTitle(R.string.favouritesBarberLbl);
+            barberFilter.setFilter("favourites"); // Set the filter text field from 'all' to 'favourites'
+            barberFilter.filter(null); // Filter the data, but don't use any prefix
+            listAdapter.notifyDataSetChanged(); // Update the adapter
+        }
+       // setRandomBarber();
+
+        listView = v.findViewById(R.id.homeList);
+
+        setListView(v);
 
         return v;
+    }
+
+    public void setListView(View view)
+    {
+        listView.setAdapter (listAdapter);
+        listView.setOnItemClickListener(this);
+        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+        listView.setMultiChoiceModeListener(this);
+        listView.setEmptyView(view.findViewById(R.id.emptyList));
     }
 
     @Override
@@ -120,7 +137,6 @@ public class BarberFragment  extends ListFragment implements View.OnClickListene
                 listAdapter.barberList.remove(barber); // update adapters data
                 setRandomBarber();
                 listAdapter.notifyDataSetChanged(); // refresh adapter
-                checkEmptyList();
             }
         }).setNegativeButton("No", new DialogInterface.OnClickListener()
         {
@@ -167,13 +183,12 @@ public class BarberFragment  extends ListFragment implements View.OnClickListene
             if (listView.isItemChecked(i))
             {
                 activity.app.barberList.remove(listAdapter.getItem(i));
-                if (activity instanceof Favourites)
-                    listAdapter.barberList.remove(listAdapter.getItem(i));
+                if (favourites)
+                   listAdapter.barberList.remove(listAdapter.getItem(i));
             }
         }
         setRandomBarber();
         listAdapter.notifyDataSetChanged(); // refresh adapter
-        checkEmptyList();
 
         actionMode.finish();
     }
@@ -186,10 +201,10 @@ public class BarberFragment  extends ListFragment implements View.OnClickListene
             if (c.favourite)
                 barberList.add(c);
 
-        if (activity instanceof Favourites)
+        if (favourites)
             if( !barberList.isEmpty()) {
                 Barber randomBarber = barberList.get(new Random()
-                        .nextInt(barberList.size()));
+                            .nextInt(barberList.size()));
 
                 /*((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText(randomBarber.barberName);
                 ((TextView) getActivity().findViewById(R.id.favouriteBarberShop)).setText(randomBarber.shop);
@@ -204,21 +219,13 @@ public class BarberFragment  extends ListFragment implements View.OnClickListene
             }
     }
 
-    public void checkEmptyList()
-    {
-        TextView recentList = getActivity().findViewById(R.id.emptyList);
-
-        if(activity.app.barberList.isEmpty())
-            recentList.setText(getString(R.string.emptyMessageLbl));
-        else
-            recentList.setText("");
-    }
     @Override
     public void onDestroyActionMode(ActionMode actionMode)
     {}
 
     @Override
-    public void onItemCheckedStateChanged(ActionMode actionMode, int position, long id, boolean checked)
-    {}
+    public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
+    }
+
     /* ************ MultiChoiceModeListener methods (end) *********** */
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorFontRed">#FF0000</color>
     <color name="colorPrimary">#FF4E50</color>
     <color name="colorPrimaryDark">#6593f5</color>
     <color name="colorAccent">#c06c84</color>
@@ -8,4 +7,7 @@
     <color name="colorFontOffWhite">#f7f7f7</color>
     <color name="colorFontBlack">#000000</color>
     <color name="colorMultiDelete">#b1c4d9</color>
+    <color name="splash">#21ade9</color>
+    <color name="colorCardShadow">#1616c8</color>
+    <color name="colorFontRed">#fe0000</color>
 </resources>

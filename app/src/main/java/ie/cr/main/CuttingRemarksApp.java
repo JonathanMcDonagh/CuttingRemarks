@@ -16,6 +16,6 @@ public class CuttingRemarksApp extends Application
     public void onCreate()
     {
         super.onCreate();
-        Log.v("Cutting Remarks", "Cutting Remarks has Started");
+        Log.v("barbermate", "BarberMate App Started");
     }
 }

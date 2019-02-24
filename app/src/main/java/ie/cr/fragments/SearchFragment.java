@@ -4,7 +4,9 @@ package ie.cr.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.ActionMode;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SearchView;
@@ -18,7 +20,9 @@ public class SearchFragment extends BarberFragment
     String selected;
     SearchView searchView;
 
-    public SearchFragment() { }
+    public SearchFragment() {
+        // Required empty public constructor
+    }
 
     public static SearchFragment newInstance() {
         SearchFragment fragment = new SearchFragment();
@@ -28,20 +32,30 @@ public class SearchFragment extends BarberFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        super.onCreateView(inflater, container, savedInstanceState);
+        View v = inflater.inflate(R.layout.fragment_search, container, false);
+        getActivity().setTitle(R.string.searchBarbersLbl);
+        listView = v.findViewById(R.id.searchList); //Bind to the list on our Search layout
+        setListView(v);
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter
-                .createFromResource(activity, R.array.barberTypes,
+                .createFromResource(getActivity(), R.array.barberTypes,
                         android.R.layout.simple_spinner_item);
 
         spinnerAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Spinner spinner = activity.findViewById(R.id.searchSpinner);
+        Spinner spinner = v.findViewById(R.id.searchSpinner);
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(this);
 
-        searchView = activity.findViewById(R.id.searchView);
-        searchView.setQueryHint("Search your Barbers");
+        searchView = v.findViewById(R.id.searchView);
+        searchView.setQueryHint("Search your Barbers Here");
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
@@ -57,6 +71,8 @@ public class SearchFragment extends BarberFragment
                 return false;
             }
         });
+
+        return v;
     }
 
     @Override

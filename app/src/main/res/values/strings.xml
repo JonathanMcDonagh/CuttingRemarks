@@ -1,32 +1,40 @@
 <resources>
     <string name="app_name">Cutting Remarks</string>
     <string name="appHelp">This is the help screen for Cutting Remarks</string>
-    <string name="appDisplayName">Cutting Remarks</string>
-    <string name="appDesc">Cutting Remarks allows you to save your favorite barbers.</string>
-    <string name="appMoreInfo">For more information </string>
+    <string name="appHelpExtra">Its really easy, you will figure out how to use it</string>
+    <string name="appDisplayName">CR</string>
+    <string name="appDesc">Cutting Remarks allows the user to keep track of their barbers</string>
+    <string name="appMoreInfo">For more information about Cutting Remarks visit the website</string>
     <string name="appAbout">About Cutting Remarks</string>
-    <string name="developer">Jonathan McDonagh</string>
+    <string name="appWebsite"></string>
+    <string name="developer">Developed by Jonathan McDonagh</string>
 
-
-    <string name="barbersrow">Barbers</string>
     <string name="searchBarbersLbl">Search Barber\'s</string>
     <string name="favouritesBarberLbl">Favourite Barber\'s</string>
     <string name="addABarberLbl">Barber Check In</string>
     <string name="addBarberBtnLbl">Add Barber</string>
     <string name="saveBarberBtn">Save Barber</string>
     <string name="recentlyViewedLbl">Recently Added Barber\'s</string>
-    <string name="barberNameLbl">Name :</string>
-    <string name="barberShopLbl">Shop :</string>
+    <string name="barberNameLbl">Barber Name :</string>
+    <string name="barberShopLbl">Barber Shop :</string>
     <string name="barberPriceLbl">Price :</string>
     <string name="barberRatingLbl">Star Rating</string>
     <string name="barberDetailsLbl">Full Barber Details</string>
     <string name="informationLbl">Information</string>
-    <string name="emptyMessageLbl">You have no Barber\'s added, go get a haircut you probably need one!</string>
+    <string name="emptyMessageLbl">You have no Barber\'s go get a haircut you probably need one</string>
     <string name="deleteBarbersLbl">Delete Barbers</string>
+    <string name="editBarberLbl">Edit a Barber</string>
+    <string name="barberadd">Add a barber</string>
 
     <string-array name="barberTypes">
         <item>All Types</item>
         <item>Favourites</item>
         <item>\> 3\* Rating</item>
     </string-array>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
 </resources>
