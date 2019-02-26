@@ -77,7 +77,7 @@ public class AddFragment extends Fragment {
             Barber c = new Barber(barberName, barberShop, ratingValue,
                     barberPrice, false);
 
-            app.barberList.add(c);
+            app.dbManager.insert(c);
             startActivity(new Intent(this.getActivity(), Home.class));
         } else
             Toast.makeText(

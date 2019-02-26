@@ -36,7 +36,8 @@ public class SearchFragment extends BarberFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        super.onCreateView(inflater, container, savedInstanceState);
+        super.onCreateView(inflater,container,savedInstanceState);
+
         View v = inflater.inflate(R.layout.fragment_search, container, false);
         getActivity().setTitle(R.string.searchBarbersLbl);
         listView = v.findViewById(R.id.searchList); //Bind to the list on our Search layout

@@ -42,13 +42,13 @@ public class EditFragment extends Fragment {
         app = (CuttingRemarksApp) getActivity().getApplication();
 
         if(getArguments() != null)
-            aBarber = getBarberObject(getArguments().getString("barberId"));
+            aBarber = app.dbManager.get(getArguments().getInt("barberId"));
     }
 
-    private Barber getBarberObject(String id) {
+    private Barber getBarberObject(int id) {
 
-        for (Barber c : app.barberList)
-            if (c.barberId.equalsIgnoreCase(id))
+        for (Barber c : app.dbManager.getAll())
+            if (c.barberId == id)
                 return c;
 
         return null;

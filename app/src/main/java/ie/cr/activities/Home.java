@@ -17,6 +17,7 @@ import android.view.View;
 import ie.cr.R;
 import ie.cr.fragments.AddFragment;
 import ie.cr.fragments.BarberFragment;
+import ie.cr.fragments.CalendarFragment;
 import ie.cr.fragments.EditFragment;
 import ie.cr.fragments.HairstylesFragment;
 import ie.cr.fragments.SearchFragment;
@@ -51,7 +52,7 @@ public class Home extends Base
         ft.replace(R.id.homeFrame, fragment);
         ft.commit();
 
-        this.setupBarbers();
+        app.dbManager.setupBarbers();
         this.setTitle(R.string.recentlyViewedLbl);
     }
 
@@ -108,6 +109,12 @@ public class Home extends Base
             ft.replace(R.id.homeFrame, fragment);
             ft.addToBackStack(null);
             ft.commit();
+
+        } else if(id == R.id.nav_calender) {
+            fragment = CalendarFragment.newInstance();
+            ft.replace(R.id.homeFrame, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
         }
 
 
@@ -116,15 +123,6 @@ public class Home extends Base
         return true;
     }
 
-    public void setupBarbers(){
-
-        app.barberList.add(new Barber("Lauren", "The Bearded Lady",5,10,false));
-        app.barberList.add(new Barber("Johnny", "Portland Barbers",3.5,12,true));
-        app.barberList.add(new Barber("Jill", "Chapz",2.5,15,true));
-        app.barberList.add(new Barber("James", "Bladez",2.5,20,true));
-        app.barberList.add(new Barber("Tom", "Chapz",2.5,15,false));
-        app.barberList.add(new Barber("Mike", "Bladez",2.5,20,true));
-    }
 
     @Override
     public void toggle(View v) {
@@ -144,3 +142,5 @@ public class Home extends Base
         }
     }
 }
+
+

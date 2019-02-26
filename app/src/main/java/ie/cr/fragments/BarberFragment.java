@@ -78,8 +78,8 @@ public class BarberFragment  extends Fragment implements
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, parent, false);
         getActivity().setTitle(R.string.recentlyViewedLbl);
-        listAdapter = new BarberListAdapter(activity, this, activity.app.barberList);
-        barberFilter = new BarberFilter(activity.app.barberList,"all",listAdapter);
+        listAdapter = new BarberListAdapter(activity, this, activity.app.dbManager.getAll());
+        barberFilter = new BarberFilter(activity.app.dbManager.getAll(),"all",listAdapter);
 
         if (favourites) {
             getActivity().setTitle(R.string.favouritesBarberLbl);
@@ -131,9 +131,8 @@ public class BarberFragment  extends Fragment implements
         {
             public void onClick(DialogInterface dialog, int id)
             {
-                activity.app.barberList.remove(barber); // remove from our list
+                activity.app.dbManager.delete(barber.barberId); // remove from our list
                 listAdapter.barberList.remove(barber); // update adapters data
-                setRandomBarber();
                 listAdapter.notifyDataSetChanged(); // refresh adapter
             }
         }).setNegativeButton("No", new DialogInterface.OnClickListener()
@@ -176,45 +175,22 @@ public class BarberFragment  extends Fragment implements
 
     public void deleteBarbers(ActionMode actionMode)
     {
-        for (int i = listAdapter.getCount() -1 ; i >= 0; i--)
-        {
-            if (listView.isItemChecked(i))
-            {
-                activity.app.barberList.remove(listAdapter.getItem(i));
-                if (favourites)
-                    listAdapter.barberList.remove(listAdapter.getItem(i));
+        Barber c = null;
+        for (int i = listAdapter.getCount() - 1; i >= 0; i--) {
+            if (listView.isItemChecked(i)) {
+                activity.app.dbManager.delete(listAdapter.getItem(i).barberId); //delete from DB
+                listAdapter.barberList.remove(listAdapter.getItem(i)); // update adapters data
             }
         }
-        setRandomBarber();
-        listAdapter.notifyDataSetChanged(); // refresh adapter
 
         actionMode.finish();
-    }
 
-    public void setRandomBarber() {
-
-        ArrayList<Barber> barberList = new ArrayList<>();
-
-        for(Barber c : activity.app.barberList)
-            if (c.favourite)
-                barberList.add(c);
-
-        if (favourites)
-            if( !barberList.isEmpty()) {
-                Barber randomBarber = barberList.get(new Random()
-                        .nextInt(barberList.size()));
-
-                /*((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText(randomBarber.barberName);
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberShop)).setText(randomBarber.shop);
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberPrice)).setText("€ " + randomBarber.price);
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberRating)).setText(randomBarber.rating + " *");*/
-            }
-            else {
-                /*((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText("N/A");
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberShop)).setText("N/A");
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberPrice)).setText("N/A");
-                ((TextView) getActivity().findViewById(R.id.favouriteBarberRating)).setText("N/A");*/
-            }
+        if (favourites) {
+            //Update the filters data
+            barberFilter = new BarberFilter(activity.app.dbManager.getAll(),"favourites",listAdapter);
+            barberFilter.filter(null);
+        }
+        listAdapter.notifyDataSetChanged();
     }
 
     @Override

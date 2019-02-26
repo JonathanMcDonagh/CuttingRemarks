@@ -21,6 +21,12 @@
             android:title="Hairstyles" />
 
         <item
+            android:id="@+id/nav_calender"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="Calendar" />
+
+
+        <item
             android:id="@+id/nav_favourites"
             android:icon="@drawable/ic_menu_favourites"
             android:title="View Favourites" />
@@ -29,6 +35,7 @@
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
             android:title="Take a Photo" />
+
 
 
     </group>

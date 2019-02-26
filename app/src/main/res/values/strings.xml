@@ -33,6 +33,8 @@
     <string name="hairstyleheader">Hairstyles</string>
 
 
+    <string name="calendarTextView">Set your haircut date</string>
+
     <string-array name="barberTypes">
         <item>All Types</item>
         <item>Favourites</item>

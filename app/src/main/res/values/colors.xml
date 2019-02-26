@@ -9,4 +9,5 @@
     <color name="colorMultiDelete">#b1c4d9</color>
     <color name="colorCardShadow">#1616c8</color>
     <color name="colorFontRed">#fe0000</color>
+    <color name="colorSplash">#D0F2FC</color>
 </resources>

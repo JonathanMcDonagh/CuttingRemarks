@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Barber implements Serializable
 {
-	public String barberId;
+	public int barberId;
 	public String barberName;
 	public String shop;
 	public double rating;
@@ -16,7 +16,6 @@ public class Barber implements Serializable
 
 	public Barber(String name, String shop, double rating, double price, boolean fav)
 	{
-		this.barberId = UUID.randomUUID().toString();
 		this.barberName = name;
 		this.shop = shop;
 		this.rating = rating;
