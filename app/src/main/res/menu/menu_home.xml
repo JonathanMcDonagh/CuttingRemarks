@@ -8,8 +8,10 @@
         app:showAsAction="ifRoom"
         android:onClick="menuHome"/>
 
+
+
     <item android:id="@+id/menu_info"
-        android:title="Info"
+        android:title="About"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:onClick="menuInfo"/>

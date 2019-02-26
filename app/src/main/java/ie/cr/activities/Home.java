@@ -1,5 +1,6 @@
 package ie.cr.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -17,6 +18,7 @@ import ie.cr.R;
 import ie.cr.fragments.AddFragment;
 import ie.cr.fragments.BarberFragment;
 import ie.cr.fragments.EditFragment;
+import ie.cr.fragments.HairstylesFragment;
 import ie.cr.fragments.SearchFragment;
 import ie.cr.models.Barber;
 
@@ -96,12 +98,18 @@ public class Home extends Base
 
         } else if (id == R.id.nav_search) {
             fragment = SearchFragment.newInstance();
-            ((BarberFragment)fragment).favourites = false;
+            ((BarberFragment) fragment).favourites = false;
             ft.replace(R.id.homeFrame, fragment);
             ft.addToBackStack(null);
             ft.commit();
 
+        } else if(id == R.id.nav_hairstyles){
+            fragment = HairstylesFragment.newInstance();
+            ft.replace(R.id.homeFrame, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
         }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -28,49 +28,48 @@
         android:layout_width="142dp"
         android:layout_height="43dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="50dp"
         android:paddingTop="10dp"
         android:text="@string/barberPriceLbl"
         android:textAlignment="textEnd"
         android:textColor="@color/colorFontBlack"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addRatingBar"
         app:layout_constraintEnd_toStartOf="@+id/addPriceET"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintTop_toBottomOf="@+id/addShopTV"
+        app:layout_constraintVertical_bias="0.966" />
 
     <TextView
         android:id="@+id/addShopTV"
         android:layout_width="135dp"
         android:layout_height="43dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/barberShopLbl"
         android:textAlignment="textEnd"
         android:textColor="@color/colorFontBlack"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addPriceTV"
         app:layout_constraintEnd_toStartOf="@+id/addShopET"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintTop_toBottomOf="@+id/addNameTV" />
 
     <TextView
         android:id="@+id/addNameTV"
         android:layout_width="139dp"
         android:layout_height="43dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/barberNameLbl"
         android:textAlignment="textEnd"
@@ -80,42 +79,42 @@
         app:layout_constraintEnd_toStartOf="@+id/addNameET"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/addNameET"
         android:layout_width="189dp"
         android:layout_height="44dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Enter Barber Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addShopET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toEndOf="@+id/addNameTV"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/addPriceET"
         android:layout_width="194dp"
         android:layout_height="42dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
         android:ems="10"
         android:hint="Enter Price"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addRatingBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toEndOf="@+id/addPriceTV"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintTop_toBottomOf="@+id/addShopET" />
 
     <EditText
         android:id="@+id/addShopET"
@@ -125,36 +124,34 @@
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="Enter Shop"
-
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addPriceET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addShopTV"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintTop_toBottomOf="@+id/addNameET" />
 
     <RatingBar
         android:id="@+id/addRatingBar"
-        android:progressTint="@color/colorFontRed"
         android:layout_width="242dp"
         android:layout_height="52dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="400dp"
         android:layout_marginBottom="75dp"
+        android:progressTint="@color/colorFontRed"
         android:rating="1"
         android:stepSize="0.5"
         app:layout_constraintBottom_toTopOf="@+id/addBarberBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addPriceET"
+        app:layout_constraintTop_toBottomOf="@+id/addPriceTV"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/addBarberBtn"
         android:layout_width="79dp"
         android:layout_height="110dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="75dp"
         android:background="@color/colorFontOffWhite"
         android:drawableTop="@drawable/red_add_btn72"
         android:elevation="5dp"
@@ -162,7 +159,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/addRatingBar"
+        app:layout_constraintVertical_bias="0.63" />
 
 </android.support.constraint.ConstraintLayout>

@@ -87,7 +87,7 @@ public class BarberFragment  extends Fragment implements
             barberFilter.filter(null); // Filter the data, but don't use any prefix
             listAdapter.notifyDataSetChanged(); // Update the adapter
         }
-       // setRandomBarber();
+        // setRandomBarber();
 
         listView = v.findViewById(R.id.homeList);
 
@@ -182,7 +182,7 @@ public class BarberFragment  extends Fragment implements
             {
                 activity.app.barberList.remove(listAdapter.getItem(i));
                 if (favourites)
-                   listAdapter.barberList.remove(listAdapter.getItem(i));
+                    listAdapter.barberList.remove(listAdapter.getItem(i));
             }
         }
         setRandomBarber();
@@ -202,7 +202,7 @@ public class BarberFragment  extends Fragment implements
         if (favourites)
             if( !barberList.isEmpty()) {
                 Barber randomBarber = barberList.get(new Random()
-                            .nextInt(barberList.size()));
+                        .nextInt(barberList.size()));
 
                 /*((TextView) getActivity().findViewById(R.id.favouriteBarberName)).setText(randomBarber.barberName);
                 ((TextView) getActivity().findViewById(R.id.favouriteBarberShop)).setText(randomBarber.shop);

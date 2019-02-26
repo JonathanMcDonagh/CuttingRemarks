@@ -26,6 +26,13 @@
     <string name="editBarberLbl">Edit a Barber</string>
     <string name="barberadd">Add a barber</string>
 
+    <string name="sidepartfade">Side Part Fade</string>
+    <string name="pointfivefade">Point Five Fade</string>
+    <string name="bowlcut">Bowlcut</string>
+    <string name="afrohaircut">Afro</string>
+    <string name="hairstyleheader">Hairstyles</string>
+
+
     <string-array name="barberTypes">
         <item>All Types</item>
         <item>Favourites</item>
