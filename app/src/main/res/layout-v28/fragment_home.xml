@@ -47,7 +47,7 @@
         android:layout_height="250dp"
         android:layout_marginBottom="16dp"
         android:contentDescription="BarberShop"
-        android:src="@drawable/barbershop"
+        android:src="@drawable/barbershop_home"
         app:layout_constraintBottom_toTopOf="@+id/homeList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

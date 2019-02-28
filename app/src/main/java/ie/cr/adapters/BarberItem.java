@@ -15,6 +15,7 @@ import ie.cr.models.Barber;
 public class BarberItem {
     public View view;
 
+    //Barber row
     public BarberItem(Context context, ViewGroup parent,
                       View.OnClickListener deleteListener, Barber barber)
     {
@@ -30,6 +31,8 @@ public class BarberItem {
         imgDelete.setOnClickListener(deleteListener);
     }
 
+
+    //To display edit layout when barber item is clicked
     private void updateControls(Barber barber) {
         ((TextView) view.findViewById(R.id.rowBarberName)).setText(barber.barberName);
 

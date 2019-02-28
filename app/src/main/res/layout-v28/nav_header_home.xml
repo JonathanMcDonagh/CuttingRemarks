@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:textColor="@color/colorFontBlack"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:text="@string/app_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 

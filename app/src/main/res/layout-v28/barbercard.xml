@@ -40,7 +40,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="5dp"
             android:contentDescription="fav"
-            android:src="@drawable/scissors" />
+            android:src="@drawable/scissors_delete" />
 
         <TextView
             android:id="@+id/rowBarberName"

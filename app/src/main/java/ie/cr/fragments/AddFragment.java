@@ -25,8 +25,11 @@ public class AddFragment extends Fragment {
     private Button saveButton;
     private CuttingRemarksApp app;
 
-    public AddFragment() { }
+    public AddFragment() {
+        //Required Empty Constructor
+    }
 
+    //Add barber instance
     public static AddFragment newInstance() {
         AddFragment fragment = new AddFragment();
 
@@ -40,10 +43,10 @@ public class AddFragment extends Fragment {
         app = (CuttingRemarksApp) getActivity().getApplication();
     }
 
+    //Inflates the layout for add fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_add, container, false);
         getActivity().setTitle(R.string.addABarberLbl);
         name = v.findViewById(R.id.addNameET);
@@ -61,6 +64,7 @@ public class AddFragment extends Fragment {
         return v;
     }
 
+    //Add barber method
     public void addBarber() {
 
         barberName = name.getText().toString();

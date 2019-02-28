@@ -56,6 +56,7 @@ public class Home extends Base
         this.setTitle(R.string.recentlyViewedLbl);
     }
 
+    //If back button is pressed when nav drawer is opened it closes the nav drawer
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -66,6 +67,7 @@ public class Home extends Base
         }
     }
 
+    //Handles nav drawer items
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -124,6 +126,7 @@ public class Home extends Base
     }
 
 
+    //When a barber is clicked allows user to edit the barber rating
     @Override
     public void toggle(View v) {
         EditFragment editFrag = (EditFragment)
@@ -133,6 +136,7 @@ public class Home extends Base
         }
     }
 
+    //To save the edited barber
     @Override
     public void saveBarber(View v) {
         EditFragment editFrag = (EditFragment)

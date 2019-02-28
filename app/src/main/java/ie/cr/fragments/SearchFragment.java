@@ -22,6 +22,7 @@ public class SearchFragment extends BarberFragment
 
     public SearchFragment() { }
 
+    //Search fragment instance
     public static SearchFragment newInstance() {
         SearchFragment fragment = new SearchFragment();
         return fragment;
@@ -32,6 +33,7 @@ public class SearchFragment extends BarberFragment
         super.onCreate(savedInstanceState);
     }
 
+    //Inflates the search fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -82,6 +84,7 @@ public class SearchFragment extends BarberFragment
         super.onStart();
     }
 
+    //Allows the user to specify the type they want to search i.e favorites, 3 stars or greater, or all types
     private void checkSelected(String selected)
     {
         if (selected != null) {
@@ -101,6 +104,7 @@ public class SearchFragment extends BarberFragment
         }
     }
 
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         selected = parent.getItemAtPosition(position).toString();
@@ -110,6 +114,7 @@ public class SearchFragment extends BarberFragment
     @Override
     public void onNothingSelected(AdapterView<?> parent) { }
 
+    //Allows the user to delete a barber they searched for
     @Override
     public void deleteBarbers(ActionMode actionMode) {
         super.deleteBarbers(actionMode);

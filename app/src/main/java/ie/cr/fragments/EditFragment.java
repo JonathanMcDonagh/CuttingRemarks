@@ -27,8 +27,11 @@ public class EditFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public EditFragment() { }
+    public EditFragment() {
+        //Required Empty Constructor
+    }
 
+    //Edit fragment instance
     public static EditFragment newInstance(Bundle barberBundle) {
         EditFragment fragment = new EditFragment();
         fragment.setArguments(barberBundle);
@@ -45,6 +48,7 @@ public class EditFragment extends Fragment {
             aBarber = app.dbManager.get(getArguments().getInt("barberId"));
     }
 
+    //Gets the barbers from the SQLite Database
     private Barber getBarberObject(int id) {
 
         for (Barber c : app.dbManager.getAll())
@@ -54,10 +58,10 @@ public class EditFragment extends Fragment {
         return null;
     }
 
+    // Inflates the Edit Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_edit, container, false);
 
         ((TextView)v.findViewById(R.id.editTitleTV)).setText(aBarber.barberName);
@@ -83,6 +87,7 @@ public class EditFragment extends Fragment {
         return v;
     }
 
+    //Saves the barber
     public void saveBarber(View v) {
         if (mListener != null) {
             String barberName = name.getText().toString();
@@ -136,7 +141,7 @@ public class EditFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
-
+    //Used when fragment no longer being associated with its activity
     @Override
     public void onDetach() {
         super.onDetach();

@@ -34,6 +34,7 @@ public class Base extends AppCompatActivity {
         startActivity(new Intent(this, Home.class));
     }
 
+    //About alert dialog, explains the app
     public void menuInfo(MenuItem m) {
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.appAbout))
