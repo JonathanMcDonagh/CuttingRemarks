@@ -15,10 +15,6 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 import ie.cr.R;
 import ie.cr.activities.Base;
@@ -38,14 +34,13 @@ public class BarberFragment  extends Fragment implements
     public boolean favourites = false;
 
     public BarberFragment() {
-        //Required Empty Constructor
+        // Required empty public constructor
     }
 
-    //If barber is clicked allows the user to edit the barber rating
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Bundle activityInfo = new Bundle(); // Creates a new Bundle object
-        activityInfo.putString("barberId", (String) view.getTag());
+        activityInfo.putInt("barberId", view.getId());
 
         Fragment fragment = EditFragment.newInstance(activityInfo);
         getActivity().setTitle(R.string.editBarberLbl);
@@ -56,13 +51,12 @@ public class BarberFragment  extends Fragment implements
                 .commit();
     }
 
-    //Barber Fragment instance
+
     public static BarberFragment newInstance() {
         BarberFragment fragment = new BarberFragment();
         return fragment;
     }
 
-    //adds the fragment to the activity
     @Override
     public void onAttach(Context context)
     {
@@ -70,23 +64,23 @@ public class BarberFragment  extends Fragment implements
         this.activity = (Base) context;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
     }
 
-    // Inflates the barber fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 
+        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, parent, false);
-        getActivity().setTitle(R.string.recentlyViewedLbl);
+
         listAdapter = new BarberListAdapter(activity, this, activity.app.dbManager.getAll());
         barberFilter = new BarberFilter(activity.app.dbManager.getAll(),"all",listAdapter);
 
         if (favourites) {
-            getActivity().setTitle(R.string.favouritesBarberLbl);
             barberFilter.setFilter("favourites"); // Set the filter text field from 'all' to 'favourites'
             barberFilter.filter(null); // Filter the data, but don't use any prefix
             listAdapter.notifyDataSetChanged(); // Update the adapter
@@ -97,10 +91,14 @@ public class BarberFragment  extends Fragment implements
 
         setListView(v);
 
+        if (!favourites)
+            getActivity().setTitle(R.string.recentlyViewedLbl);
+        else
+            getActivity().setTitle(R.string.favouritesBarberLbl);
+
         return v;
     }
 
-    //Sets list view for barbers
     public void setListView(View view)
     {
         listView.setAdapter (listAdapter);
@@ -110,13 +108,11 @@ public class BarberFragment  extends Fragment implements
         listView.setEmptyView(view.findViewById(R.id.emptyList));
     }
 
-    //Allows the activity to become visible to the user
     @Override
     public void onStart()
     {
         super.onStart();
     }
-
 
     @Override
     public void onClick(View view)
@@ -127,8 +123,6 @@ public class BarberFragment  extends Fragment implements
         }
     }
 
-    //Allows the user to delete a barber but gives a alert dialog first to make sure they
-    // want to delete that barber
     public void onBarberDelete(final Barber barber)
     {
         String stringName = barber.barberName;
@@ -182,7 +176,6 @@ public class BarberFragment  extends Fragment implements
         }
     }
 
-    //Deletes the barber from the SQLite database
     public void deleteBarbers(ActionMode actionMode)
     {
         Barber c = null;
@@ -202,6 +195,7 @@ public class BarberFragment  extends Fragment implements
         }
         listAdapter.notifyDataSetChanged();
     }
+
 
     @Override
     public void onDestroyActionMode(ActionMode actionMode)

@@ -52,7 +52,7 @@ public class Home extends Base
         ft.replace(R.id.homeFrame, fragment);
         ft.commit();
 
-        app.dbManager.setupBarbers();
+        //app.dbManager.setupBarbers();
         this.setTitle(R.string.recentlyViewedLbl);
     }
 
@@ -125,7 +125,6 @@ public class Home extends Base
         return true;
     }
 
-
     //When a barber is clicked allows user to edit the barber rating
     @Override
     public void toggle(View v) {
@@ -146,5 +145,3 @@ public class Home extends Base
         }
     }
 }
-
-

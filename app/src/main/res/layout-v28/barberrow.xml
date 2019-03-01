@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:contentDescription="fav"
         android:gravity="center_vertical"
-        android:src="@drawable/favourites_72"
+        android:src="@drawable/nonfavourite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"

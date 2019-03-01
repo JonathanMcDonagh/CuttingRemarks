@@ -12,10 +12,12 @@ public class Barber implements Serializable
 	public double price;
 	public boolean favourite;
 
+
 	public Barber() {}
 
 	public Barber(String name, String shop, double rating, double price, boolean fav)
 	{
+		//this.barberId = UUID.randomUUID().toString();
 		this.barberName = name;
 		this.shop = shop;
 		this.rating = rating;

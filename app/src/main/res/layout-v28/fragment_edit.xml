@@ -183,7 +183,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTitleTV"
         app:layout_constraintTop_toBottomOf="@+id/editBarTV"
-        app:srcCompat="@drawable/favourites_72" />
+        app:srcCompat="@drawable/nonfavourite" />
 </android.support.constraint.ConstraintLayout>
 
 

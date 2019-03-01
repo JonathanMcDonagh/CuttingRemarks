@@ -27,7 +27,7 @@
             android:layout_marginBottom="8dp"
             android:contentDescription="fav"
             android:gravity="center_vertical"
-            android:src="@drawable/favourites_72" />
+            android:src="@drawable/nonfavourite" />
 
         <ImageView
             android:id="@+id/rowDeleteImg"

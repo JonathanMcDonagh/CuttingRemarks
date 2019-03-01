@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cutting Remarks</string>
+    <string name="app_name">CR</string>
     <string name="appHelp">This is the help screen for Cutting Remarks</string>
     <string name="appHelpExtra">Its really easy, you will figure out how to use it</string>
     <string name="appDisplayName">CR</string>
@@ -31,6 +31,9 @@
     <string name="bowlcut">Bowlcut</string>
     <string name="afrohaircut">Afro</string>
     <string name="hairstyleheader">Hairstyles</string>
+    <string name="calendarFragmentHeader">Calendar</string>
+
+    <string name="splashText">CuttingRemarks</string>
 
 
     <string name="calendarTextView">Set your haircut date</string>

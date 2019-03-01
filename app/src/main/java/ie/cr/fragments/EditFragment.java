@@ -12,6 +12,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 import ie.cr.R;
 import ie.cr.main.CuttingRemarksApp;
 import ie.cr.models.Barber;
@@ -28,10 +30,9 @@ public class EditFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public EditFragment() {
-        //Required Empty Constructor
+        // Required empty public constructor
     }
 
-    //Edit fragment instance
     public static EditFragment newInstance(Bundle barberBundle) {
         EditFragment fragment = new EditFragment();
         fragment.setArguments(barberBundle);
@@ -42,26 +43,25 @@ public class EditFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        app = (CuttingRemarksApp) getActivity().getApplication();
+        app = (CuttingRemarksApp) Objects.requireNonNull(getActivity()).getApplication();
 
         if(getArguments() != null)
             aBarber = app.dbManager.get(getArguments().getInt("barberId"));
     }
 
-    //Gets the barbers from the SQLite Database
     private Barber getBarberObject(int id) {
 
-        for (Barber c : app.dbManager.getAll())
-            if (c.barberId == id)
-                return c;
+        for (Barber b : app.dbManager.getAll())
+            if (b.barberId == id)
+                return b;
 
         return null;
     }
 
-    // Inflates the Edit Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_edit, container, false);
 
         ((TextView)v.findViewById(R.id.editTitleTV)).setText(aBarber.barberName);
@@ -81,13 +81,12 @@ public class EditFragment extends Fragment {
             editFavourite.setImageResource(R.drawable.favourites_72);
             isFavourite = true;
         } else {
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.nonfavourite);
             isFavourite = false;
         }
         return v;
     }
 
-    //Saves the barber
     public void saveBarber(View v) {
         if (mListener != null) {
             String barberName = name.getText().toString();
@@ -107,13 +106,15 @@ public class EditFragment extends Fragment {
                 aBarber.price = barberPrice;
                 aBarber.rating = ratingValue;
 
+                app.dbManager.update(aBarber);
+
                 if (getActivity().getSupportFragmentManager().getBackStackEntryCount() > 0) {
-                    getFragmentManager().popBackStack();
+                    getActivity().getSupportFragmentManager().popBackStack();
                     return;
                 }
             }
         } else
-            Toast.makeText(getActivity(), "You must Enter Something for Barber Name and Barber Shop", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "You must Enter Something for Name and Shop", Toast.LENGTH_SHORT).show();
     }
 
     public void toggle(View v) {
@@ -122,13 +123,14 @@ public class EditFragment extends Fragment {
             aBarber.favourite = false;
             Toast.makeText(getActivity(), "Removed From Favourites", Toast.LENGTH_SHORT).show();
             isFavourite = false;
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.nonfavourite);
         } else {
             aBarber.favourite = true;
             Toast.makeText(getActivity(), "Added to Favourites !!", Toast.LENGTH_SHORT).show();
             isFavourite = true;
             editFavourite.setImageResource(R.drawable.favourites_72);
         }
+        app.dbManager.update(aBarber);
     }
 
     @Override
@@ -141,7 +143,7 @@ public class EditFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
-    //Used when fragment no longer being associated with its activity
+
     @Override
     public void onDetach() {
         super.onDetach();
@@ -152,4 +154,6 @@ public class EditFragment extends Fragment {
         void toggle(View v);
         void saveBarber(View v);
     }
+
+
 }
