@@ -13,7 +13,8 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <!-- https://github.com/vinc3m1/RoundedImageView -->
-    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/googlephoto1"
         android:layout_width="60dp"
         android:layout_height="60dp"

@@ -121,12 +121,12 @@ public class EditFragment extends Fragment {
 
         if (isFavourite) {
             aBarber.favourite = false;
-            Toast.makeText(getActivity(), "Removed From Favourites", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Removed from your Favourites", Toast.LENGTH_SHORT).show();
             isFavourite = false;
             editFavourite.setImageResource(R.drawable.nonfavourite);
         } else {
             aBarber.favourite = true;
-            Toast.makeText(getActivity(), "Added to Favourites !!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Added to your Favourites", Toast.LENGTH_SHORT).show();
             isFavourite = true;
             editFavourite.setImageResource(R.drawable.favourites_72);
         }

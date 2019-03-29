@@ -49,7 +49,7 @@ public class Splash extends Activity {
 
                 if (!mIsBackButtonPressed) {
                     // start the home screen if the back button wasn't pressed already
-                    Intent intent = new Intent(Splash.this, Home.class);
+                    Intent intent = new Intent(Splash.this, FacebookLogin.class);
                     Splash.this.startActivity(intent);
                 }
             }

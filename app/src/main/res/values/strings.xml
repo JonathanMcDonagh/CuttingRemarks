@@ -49,4 +49,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
+    <string name="facebook_app_id">2317576371900165</string>
+    <string name="fb_login_protocol_scheme">fb2317576371900165</string>
+
+    <string name="termsnconditions">By Clicking on login, you are accepting our terms and conditions</string>
+
 </resources>

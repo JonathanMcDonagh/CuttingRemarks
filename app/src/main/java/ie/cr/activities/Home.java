@@ -2,9 +2,7 @@ package ie.cr.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +11,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import ie.cr.R;
 import ie.cr.fragments.AddFragment;
@@ -21,7 +25,6 @@ import ie.cr.fragments.CalendarFragment;
 import ie.cr.fragments.EditFragment;
 import ie.cr.fragments.HairstylesFragment;
 import ie.cr.fragments.SearchFragment;
-import ie.cr.models.Barber;
 
 public class Home extends Base
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -29,13 +32,20 @@ public class Home extends Base
 
     FragmentTransaction ft;
 
+   // private Button thelogoutbtn;
+   // private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+
+      //  thelogoutbtn = (Button) findViewById(R.id.logoutbtn);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+      //  mAuth = FirebaseAuth.getInstance();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -54,7 +64,39 @@ public class Home extends Base
 
         //app.dbManager.setupBarbers();
         this.setTitle(R.string.recentlyViewedLbl);
+
+
+
+        /*thelogoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mAuth.signOut();
+
+                FirebaseAuth.getInstance().signOut();
+                LoginManager.getInstance().logOut();
+
+                updateUI();
+            }
+        });*/
     }
+/*
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser ==null) {
+            updateUI();
+        }
+    }
+
+    private void updateUI() {
+        Toast.makeText(Home.this,"You're logged out", Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(Home.this, FacebookLogin.class);
+        startActivity(intent);
+        finish();
+    }*/
 
     //If back button is pressed when nav drawer is opened it closes the nav drawer
     @Override

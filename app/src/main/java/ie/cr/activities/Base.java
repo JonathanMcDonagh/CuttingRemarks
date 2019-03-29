@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.facebook.login.LoginManager;
+
 import ie.cr.R;
 import ie.cr.fragments.BarberFragment;
 import ie.cr.main.CuttingRemarksApp;
@@ -34,6 +36,7 @@ public class Base extends AppCompatActivity {
         startActivity(new Intent(this, Home.class));
     }
 
+
     //About alert dialog, explains the app
     public void menuInfo(MenuItem m) {
         new AlertDialog.Builder(this)
@@ -49,4 +52,9 @@ public class Base extends AppCompatActivity {
                 })
                 .show();
     }
+
+    public void logout(MenuItem m){
+
+    }
+
 }

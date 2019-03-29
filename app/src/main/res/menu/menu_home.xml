@@ -9,10 +9,12 @@
         android:onClick="menuHome"/>
 
 
-
     <item android:id="@+id/menu_info"
         android:title="About"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:onClick="menuInfo"/>
+
+
+
 </menu>
