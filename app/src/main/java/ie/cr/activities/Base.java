@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
 
 import ie.cr.R;
 import ie.cr.fragments.BarberFragment;
@@ -53,8 +55,14 @@ public class Base extends AppCompatActivity {
                 .show();
     }
 
-    public void logout(MenuItem m){
+
+    public void menuLogout(MenuItem m){
+        Toast.makeText(Base.this,"You've Logged Out", Toast.LENGTH_LONG).show();
+
+        FirebaseAuth.getInstance().signOut();
+        LoginManager.getInstance().logOut();
+        finish();
+        startActivity(new Intent(Base.this, FacebookLogin.class));
 
     }
-
 }
