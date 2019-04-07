@@ -62,7 +62,7 @@ public class Base extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         LoginManager.getInstance().logOut();
         finish();
-        startActivity(new Intent(Base.this, FacebookLogin.class));
+        startActivity(new Intent(Base.this, Login.class));
 
     }
 }

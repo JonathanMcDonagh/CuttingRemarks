@@ -3,6 +3,10 @@
     package="ie.cr">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="ie.cm.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name=".main.CuttingRemarksApp"
@@ -12,9 +16,9 @@
         android:roundIcon="@drawable/ic_launcher1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".activities.FacebookLogin"></activity>
-
+        <activity android:name=".activities.Images"></activity>
+        <activity android:name=".activities.Camera" />
+        <activity android:name=".activities.Login" />
         <activity
             android:name=".activities.Splash"
             android:configChanges="orientation|keyboardHidden"
@@ -26,6 +30,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -47,8 +59,6 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".activities.Home"
             android:theme="@style/AppTheme.NoActionBar"

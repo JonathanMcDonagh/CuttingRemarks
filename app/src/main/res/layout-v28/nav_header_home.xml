@@ -13,20 +13,12 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <!-- https://github.com/vinc3m1/RoundedImageView -->
-    <com.makeramen.roundedimageview.RoundedImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/googlephoto1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:paddingTop="5dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/favourites_72"
-        app:riv_border_color="#333333"
-        app:riv_border_width="1dip"
-        app:riv_corner_radius="50dip"
-        app:riv_mutate_background="true"
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/friendProfilePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
-        app:riv_oval="true" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
