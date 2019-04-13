@@ -1,6 +1,13 @@
 # CuttingRemarks
-Cutting Remarks (Barber Rating App) Version 1 Allows users to add barber name, add barber shop, add price and add rating, it 
-also allows the user to search particular barbers, view hairstyles and has a calendar. 
+Cutting Remarks (Barber Rating App) Version 2 Allows users to add barber name, add barber shop, add price and add rating, it 
+also allows the user to search particular barbers, add their own hairstyles or future haircuts and view barbers near you. 
+
+References
+Facebook Login:
+https://developers.facebook.com/docs/facebook-login/android/
+
+Image Gallery:
+https://www.youtube.com/playlist?list=PLrnPJCHvNZuB_7nB5QD-4bNg6tpdEUImQ
 
 
 References for images used:
@@ -32,3 +39,8 @@ http://www.mens-hairstyle.com/wp-content/uploads/2017/03/Classic-Haircut-for-Men
 https://www.google.com/search?hl=en-IE&tbm=isch&q=plus+button+icon&chips=q:plus+button+icon,g_1:red:K3Ut7MN4648%3D,online_chips:round+button&usg=AI4_-kRVUIkYZFa0rGuHw78VkMNgsSCaxg&sa=X&ved=0ahUKEwjLlv226dvgAhWKUJoKHTsfC0oQ4lYILCgC&biw=852&bih=730&dpr=1.13#imgrc=HQSFiqwo79DadM:
 
 https://www.google.com/search?q=barber+pole+icon&hl=en-IE&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjx_KbA5tvgAhXaWxUIHSFsBoIQ_AUIDigB&biw=639&bih=596#imgrc=N0bgMK4gIopa3M:
+
+
+
+
+
