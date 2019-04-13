@@ -1,6 +1,6 @@
 # CuttingRemarks
 Cutting Remarks (Barber Rating App) Version 1 Allows users to add barber name, add barber shop, add price and add rating, it 
-also allows the user to search particular barbers, view hairstyles and has a calendar. 
+also allows the user to search particular barbers, add their own hairstyles or future haircuts and view barbers near you. 
 
 References
 Facebook Login:
