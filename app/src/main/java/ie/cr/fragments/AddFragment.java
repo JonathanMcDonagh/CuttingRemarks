@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import ie.cr.R;
 import ie.cr.activities.Home;
 import ie.cr.main.CuttingRemarksApp;
@@ -24,6 +27,7 @@ public class AddFragment extends Fragment {
     private RatingBar ratingBar;
     private Button saveButton;
     private CuttingRemarksApp app;
+
 
     public AddFragment() {
         //Required Empty Constructor
@@ -41,6 +45,7 @@ public class AddFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         app = (CuttingRemarksApp) getActivity().getApplication();
+
     }
 
     //Inflates the layout for add fragment
@@ -90,4 +95,5 @@ public class AddFragment extends Fragment {
                             + "\'Name\', \'Shop\' and \'Price\'",
                     Toast.LENGTH_SHORT).show();
     }
+
 }

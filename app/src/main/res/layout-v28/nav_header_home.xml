@@ -12,12 +12,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <!-- https://github.com/vinc3m1/RoundedImageView -->
-    <com.facebook.login.widget.ProfilePictureView
-        android:id="@+id/friendProfilePicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+
 
     <TextView
         android:layout_width="match_parent"

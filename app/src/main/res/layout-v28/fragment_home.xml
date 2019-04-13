@@ -13,7 +13,7 @@
         android:layout_height="31dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="38dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/emptyMessageLbl"
@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barberShop"
+        app:layout_constraintTop_toBottomOf="@+id/homeList"
         app:layout_constraintVertical_bias="0.486" />
 
 
@@ -41,18 +41,54 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.713" />
 
-    <ImageView
-        android:id="@+id/barberShop"
-        android:layout_width="500dp"
-        android:layout_height="261dp"
-        android:contentDescription="BarberShop"
-        android:src="@drawable/barbershop_home"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- https://github.com/vinc3m1/RoundedImageView -->
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/friendProfilePicture"
+        android:layout_width="204dp"
+        android:layout_height="148dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewGallerybtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/viewGallerybtn"
+        android:layout_width="324dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="View Your Gallery"
+        android:textColor="@color/colorFontWhite"
+        app:layout_constraintBottom_toTopOf="@+id/homeList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friendProfilePicture" />
+
+    <!--
+        <ImageView
+            android:id="@+id/barberShop"
+            android:layout_width="500dp"
+            android:layout_height="261dp"
+            android:contentDescription="BarberShop"
+            android:src="@drawable/barbershop_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+            -->
 <!--
     <Button
         android:id="@+id/logoutbtn"

@@ -12,8 +12,23 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
+import com.bumptech.glide.annotation.GlideExtension;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.annotation.GlideOption;
+import com.bumptech.glide.annotation.GlideType;
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.widget.ProfilePictureView;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import ie.cr.R;
 import ie.cr.fragments.AddFragment;
@@ -21,6 +36,7 @@ import ie.cr.fragments.BarberFragment;
 import ie.cr.fragments.CalendarFragment;
 import ie.cr.fragments.EditFragment;
 import ie.cr.fragments.HairstylesFragment;
+import ie.cr.fragments.MapFragment;
 import ie.cr.fragments.SearchFragment;
 import ie.cr.main.CuttingRemarksApp;
 
@@ -34,8 +50,10 @@ public class Home extends Base
     public AlertDialog loader;
 
     public GoogleApiClient mGoogleApiClient;
+    private FirebaseAuth mAuth;
 
 
+    private Button yourGalleryBtn;
 
 
 
@@ -45,14 +63,17 @@ public class Home extends Base
         setContentView(R.layout.home);
 
 
-
-
         //  thelogoutbtn = (Button) findViewById(R.id.logoutbtn);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-      //  mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() == null){
+            finish();
+            startActivity(new Intent(this, Login.class ));
+        }
 
+        FirebaseUser user = mAuth.getCurrentUser();
 
 
 
@@ -73,11 +94,10 @@ public class Home extends Base
 
         //app.dbManager.setupBarbers();
         this.setTitle(R.string.recentlyViewedLbl);
-
-
-
-
     }
+
+
+
 
 
     //If back button is pressed when nav drawer is opened it closes the nav drawer
@@ -129,7 +149,13 @@ public class Home extends Base
             ft.replace(R.id.homeFrame, fragment);
             ft.addToBackStack(null);
             ft.commit();
-
+        } else if(id == R.id.nav_map){
+            fragment = MapFragment.newInstance();
+            ft.replace(R.id.homeFrame, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
+        }
+/*
         } else if(id == R.id.nav_hairstyles){
             fragment = HairstylesFragment.newInstance();
             ft.replace(R.id.homeFrame, fragment);
@@ -141,9 +167,10 @@ public class Home extends Base
             ft.replace(R.id.homeFrame, fragment);
             ft.addToBackStack(null);
             ft.commit();
+
         }else if (id == R.id.nav_camera) {
             startActivity(new Intent(this, Camera.class));
-        }
+        }*/
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -152,6 +179,18 @@ public class Home extends Base
     }
 
 
+    public void onStart() {
+        super.onStart();
+        Button viewBtn = findViewById(R.id.viewGallerybtn);
+        viewBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Home.this, Camera.class);
+                startActivity(intent);
+            }
+
+        });
+    }
 
 
     //When a barber is clicked allows user to edit the barber rating

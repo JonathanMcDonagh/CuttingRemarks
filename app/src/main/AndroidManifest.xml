@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ie.cr">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -7,6 +8,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:name=".main.CuttingRemarksApp"
@@ -16,8 +21,14 @@
         android:roundIcon="@drawable/ic_launcher1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.Images"></activity>
-        <activity android:name=".activities.Camera" />
+        <activity android:name=".fragments.MapFragment"></activity>
+        <activity android:name=".activities.Login2" />
+        <activity
+            android:name=".activities.Images"
+            android:parentActivityName=".activities.Camera" />
+        <activity
+            android:name=".activities.Camera"
+            android:parentActivityName=".activities.Home" />
         <activity android:name=".activities.Login" />
         <activity
             android:name=".activities.Splash"
