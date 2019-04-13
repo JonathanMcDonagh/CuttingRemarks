@@ -5,6 +5,7 @@ also allows the user to search particular barbers, view hairstyles and has a cal
 References
 Facebook Login:
 https://developers.facebook.com/docs/facebook-login/android/
+
 Image Gallery:
 https://www.youtube.com/playlist?list=PLrnPJCHvNZuB_7nB5QD-4bNg6tpdEUImQ
 
