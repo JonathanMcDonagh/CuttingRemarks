@@ -34,16 +34,16 @@ public class BarberItem {
         ((TextView) view.findViewById(R.id.rowBarberName)).setText(barber.barberName);
 
         ((TextView) view.findViewById(R.id.rowBarberShop)).setText(barber.shop);
-        ((TextView) view.findViewById(R.id.rowRating)).setText(barber.rating + " *");
+        ((TextView) view.findViewById(R.id.rowRating)).setText(barber.rating + " ⭐");
         ((TextView) view.findViewById(R.id.rowPrice)).setText("€" +
                 new DecimalFormat("0.00").format(barber.price));
 
         ImageView imgIcon = view.findViewById(R.id.rowFavouriteImg);
 
         if (barber.favourite == true)
-            imgIcon.setImageResource(R.drawable.favourites_72);
+            imgIcon.setImageResource(R.drawable.goldstar);
         else
-            imgIcon.setImageResource(R.drawable.nonfavourite);
+            imgIcon.setImageResource(R.drawable.star);
 
 
     }

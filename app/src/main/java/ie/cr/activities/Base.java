@@ -34,10 +34,10 @@ public class Base extends AppCompatActivity {
         return true;
     }
 
+    //When home icon is clicked
     public void menuHome(MenuItem m) {
         startActivity(new Intent(this, Home.class));
     }
-
 
     //About alert dialog, explains the app
     public void menuInfo(MenuItem m) {
@@ -56,6 +56,7 @@ public class Base extends AppCompatActivity {
     }
 
 
+    //Logout button for Facebook Login and FirebaseAuth
     public void menuLogout(MenuItem m){
         Toast.makeText(Base.this,"You've Logged Out", Toast.LENGTH_LONG).show();
 

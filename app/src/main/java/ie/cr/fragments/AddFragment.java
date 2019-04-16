@@ -28,6 +28,8 @@ public class AddFragment extends Fragment {
     private Button saveButton;
     private CuttingRemarksApp app;
 
+    private DatabaseReference mDatabaseReference;
+
 
     public AddFragment() {
         //Required Empty Constructor
@@ -45,6 +47,9 @@ public class AddFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         app = (CuttingRemarksApp) getActivity().getApplication();
+
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("AddedBarbers");
+
 
     }
 
@@ -66,6 +71,7 @@ public class AddFragment extends Fragment {
             }
         });
 
+
         return v;
     }
 
@@ -86,8 +92,10 @@ public class AddFragment extends Fragment {
             Barber c = new Barber(barberName, barberShop, ratingValue,
                     barberPrice, false);
 
+
             app.dbManager.insert(c);
             startActivity(new Intent(this.getActivity(), Home.class));
+
         } else
             Toast.makeText(
                     this.getActivity(),
@@ -95,5 +103,8 @@ public class AddFragment extends Fragment {
                             + "\'Name\', \'Shop\' and \'Price\'",
                     Toast.LENGTH_SHORT).show();
     }
+
+
+
 
 }

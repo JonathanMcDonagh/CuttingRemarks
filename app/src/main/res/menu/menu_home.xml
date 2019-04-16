@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item android:id="@+id/menu_home"
-        android:icon="@drawable/home_84"
+        android:icon="@drawable/ic_launcher1"
         android:title="Home"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
         android:onClick="menuHome"/>
 
-
-
     <item android:id="@+id/menu_info"
         android:title="About"
-        android:orderInCategory="100"
         app:showAsAction="never"
         android:onClick="menuInfo"/>
 
     <item android:id="@+id/menuLogout"
+        android:orderInCategory="100"
         android:title="Logout"
         android:onClick="menuLogout"/>
 

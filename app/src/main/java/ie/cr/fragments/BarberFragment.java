@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
@@ -15,6 +16,12 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import ie.cr.R;
 import ie.cr.activities.Base;
@@ -32,6 +39,8 @@ public class BarberFragment  extends Fragment implements
     public ListView listView;
     public BarberFilter barberFilter;
     public boolean favourites = false;
+
+
 
     public BarberFragment() {
         // Required empty public constructor
@@ -74,10 +83,15 @@ public class BarberFragment  extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 
+
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, parent, false);
 
         listAdapter = new BarberListAdapter(activity, this, activity.app.dbManager.getAll());
+
+
+
         barberFilter = new BarberFilter(activity.app.dbManager.getAll(),"all",listAdapter);
 
         if (favourites) {
@@ -112,6 +126,7 @@ public class BarberFragment  extends Fragment implements
     public void onStart()
     {
         super.onStart();
+
     }
 
     @Override

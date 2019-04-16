@@ -25,13 +25,13 @@
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homeList"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.046" />
 
 
     <ListView
         android:id="@+id/homeList"
         android:layout_width="0dp"
-        android:layout_height="373dp"
+        android:layout_height="546dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,41 +39,41 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- https://github.com/vinc3m1/RoundedImageView -->
-    <com.facebook.login.widget.ProfilePictureView
-        android:id="@+id/friendProfilePicture"
-        android:layout_width="204dp"
-        android:layout_height="148dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="15dp"
+
+    <!--<com.facebook.login.widget.ProfilePictureView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toTopOf="@+id/viewGallerybtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+-->
 
     <Button
         android:id="@+id/viewGallerybtn"
-        android:layout_width="324dp"
-        android:layout_height="48dp"
+        android:layout_width="196dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="View Your Gallery"
         android:textColor="@color/colorFontWhite"
-        app:layout_constraintBottom_toTopOf="@+id/homeList"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/friendProfilePicture" />
+        app:layout_constraintTop_toBottomOf="@+id/emptyList"
+        app:layout_constraintVertical_bias="0.571" />
 
     <!--
         <ImageView

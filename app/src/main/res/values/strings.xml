@@ -3,8 +3,8 @@
     <string name="appHelp">This is the help screen for Cutting Remarks</string>
     <string name="appHelpExtra">Its really easy, you will figure out how to use it</string>
     <string name="appDisplayName">CR</string>
-    <string name="appDesc">Cutting Remarks allows the user to keep track of their barbers</string>
-    <string name="appMoreInfo">For more information about Cutting Remarks visit the website</string>
+    <string name="appDesc">Cutting Remarks allows the user to keep track of their barbers, future haircuts and local barbers</string>
+    <string name="appMoreInfo">For more information about Cutting Remarks visit the website www.cuttingremarks.ie</string>
     <string name="appAbout">About Cutting Remarks</string>
     <string name="appWebsite"></string>
     <string name="developer">Developed by Jonathan McDonagh</string>
@@ -25,42 +25,31 @@
     <string name="deleteBarbersLbl">Delete Barbers</string>
     <string name="editBarberLbl">Edit a Barber</string>
     <string name="barberadd">Add a barber</string>
-
-    <string name="sidepartfade">Side Part Fade</string>
-    <string name="pointfivefade">Point Five Fade</string>
-    <string name="bowlcut">Bowlcut</string>
-    <string name="afrohaircut">Afro</string>
-    <string name="hairstyleheader">Hairstyles</string>
-    <string name="calendarFragmentHeader">Calendar</string>
-
+    <string name="addDesc">Add a Rating for your latest Haircut</string>
     <string name="splashText">Cutting Remarks</string>
 
-
-    <string name="calendarTextView">Set your next haircut date</string>
-    <string name="calendarbtn">Set Haircut Date</string>
 
     <string-array name="barberTypes">
         <item>All Types</item>
         <item>Favourites</item>
-        <item>\> 3\* Rating</item>
+        <item>\> 3⭐ Rating</item>
     </string-array>
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-
-
+    <string name="facebook_app_id">2317576371900165</string>
+    <string name="fb_login_protocol_scheme">fb2317576371900165</string>
+    <string name="title_map">Cutting Remarks Map</string>
+    <string name="google_maps_key">AIzaSyC_1hpZk8R7WNSvevSnnG0S7ipayaXP_3E</string>
 
     <string name="email">Enter Your Email</string>
     <string name="password">Enter Your Password</string>
     <string name="termsnconditions">By Clicking on login, you are accepting our terms and conditions</string>
-
-    <string name="title_map">Cutting Remarks Map</string>
-    
+    <string name="loginScreentxtView">Welcome to Cutting Remarks\n Your Barber Manager App</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
 </resources>

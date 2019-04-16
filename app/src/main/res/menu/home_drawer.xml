@@ -17,35 +17,15 @@
             android:icon="@drawable/ic_menu_search"
             android:title="Search" />
 
-        <!--<item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Your Haircuts" />
--->
         <item
             android:id="@+id/nav_favourites"
             android:icon="@drawable/ic_menu_favourites"
             android:title="View Favourites" />
-<!--
-        <item
-            android:id="@+id/nav_hairstyles"
-            android:icon="@drawable/ic_launcher1"
-            android:title="Sample Hairstyles" />
-
-        <item
-            android:id="@+id/nav_calender"
-            android:icon="@android:drawable/ic_menu_my_calendar"
-            android:title="Calendar" />
-            -->
 
         <item
             android:id="@+id/nav_map"
             android:icon="@drawable/ic_menu_map"
             android:title="Barbers Near Me"/>
-
-
-
-
 
     </group>
 

@@ -25,9 +25,9 @@
         <activity android:name=".activities.Login2" />
         <activity
             android:name=".activities.Images"
-            android:parentActivityName=".activities.Camera" />
+            android:parentActivityName=".activities.Gallery" />
         <activity
-            android:name=".activities.Camera"
+            android:name=".activities.Gallery"
             android:parentActivityName=".activities.Home" />
         <activity android:name=".activities.Login" />
         <activity

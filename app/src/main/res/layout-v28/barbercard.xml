@@ -7,13 +7,15 @@
     android:elevation="50dp"
     android:outlineSpotShadowColor="@color/colorCardShadow"
     app:cardCornerRadius="5dp"
+    android:background="@color/bgcolor"
     app:cardElevation="24dp">
 
     <RelativeLayout
         android:id="@+id/cardviewlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_activated">
+
+        android:background="@color/cardbg">
 
         <ImageView
             android:id="@+id/rowFavouriteImg"
@@ -27,7 +29,7 @@
             android:layout_marginBottom="8dp"
             android:contentDescription="fav"
             android:gravity="center_vertical"
-            android:src="@drawable/nonfavourite" />
+            android:src="@drawable/star" />
 
         <ImageView
             android:id="@+id/rowDeleteImg"
@@ -40,7 +42,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="5dp"
             android:contentDescription="fav"
-            android:src="@drawable/scissors_delete" />
+            android:src="@android:drawable/ic_menu_delete" />
 
         <TextView
             android:id="@+id/rowBarberName"
@@ -51,7 +53,7 @@
             android:layout_marginStart="68dp"
             android:gravity="center_vertical"
             android:text="Barber Name"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorFontWhite"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -63,7 +65,7 @@
             android:layout_alignBottom="@+id/rowFavouriteImg"
             android:gravity="center_vertical"
             android:text="Barber Shop"
-            android:textColor="@color/colorFontBlack"
+            android:textColor="@color/colorFontWhite"
             android:textSize="11sp"
             android:textStyle="bold" />
 
@@ -77,10 +79,9 @@
             android:layout_marginBottom="-1dp"
             android:gravity="center_vertical"
             android:text="5.0 *"
-            android:textColor="@color/colorFontBlack"
+            android:textColor="@color/colorFontWhite"
             android:textSize="11sp"
             android:textStyle="bold" />
-
 
 
         <TextView
@@ -89,11 +90,11 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/rowRating"
             android:layout_alignTop="@+id/rowBarberName"
-            android:layout_marginStart="-16dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="-2dp"
             android:gravity="center_vertical"
-            android:text="€3.99"
-            android:textColor="@color/colorPrimary"
+            android:text="€12"
+            android:textColor="@color/colorFontWhite"
             android:textSize="14sp"
             android:textStyle="bold" />
     </RelativeLayout>

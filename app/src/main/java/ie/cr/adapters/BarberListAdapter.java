@@ -1,6 +1,7 @@
 package ie.cr.adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,8 +29,9 @@ public class BarberListAdapter extends ArrayAdapter<Barber>
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         BarberItem item = new BarberItem(context, parent,
-                deleteListener, barberList.get(position));
+               deleteListener, barberList.get(position));
         return item.view;
+
     }
 
     @Override

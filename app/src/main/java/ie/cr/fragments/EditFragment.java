@@ -12,6 +12,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.Objects;
 
 import ie.cr.R;
@@ -26,6 +28,9 @@ public class EditFragment extends Fragment {
     private EditText name, shop, price;
     private RatingBar ratingBar;
     public CuttingRemarksApp app;
+
+    private DatabaseReference mDatabaseReference;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -78,10 +83,10 @@ public class EditFragment extends Fragment {
         ratingBar.setRating((float)aBarber.rating);
 
         if (aBarber.favourite == true) {
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.goldstar);
             isFavourite = true;
         } else {
-            editFavourite.setImageResource(R.drawable.nonfavourite);
+            editFavourite.setImageResource(R.drawable.star);
             isFavourite = false;
         }
         return v;
@@ -106,7 +111,7 @@ public class EditFragment extends Fragment {
                 aBarber.price = barberPrice;
                 aBarber.rating = ratingValue;
 
-                app.dbManager.update(aBarber);
+                //app.dbManager.update(aBarber);
 
                 if (getActivity().getSupportFragmentManager().getBackStackEntryCount() > 0) {
                     getActivity().getSupportFragmentManager().popBackStack();
@@ -123,12 +128,12 @@ public class EditFragment extends Fragment {
             aBarber.favourite = false;
             Toast.makeText(getActivity(), "Removed from your Favourites", Toast.LENGTH_SHORT).show();
             isFavourite = false;
-            editFavourite.setImageResource(R.drawable.nonfavourite);
+            editFavourite.setImageResource(R.drawable.star);
         } else {
             aBarber.favourite = true;
             Toast.makeText(getActivity(), "Added to your Favourites", Toast.LENGTH_SHORT).show();
             isFavourite = true;
-            editFavourite.setImageResource(R.drawable.favourites_72);
+            editFavourite.setImageResource(R.drawable.goldstar);
         }
         app.dbManager.update(aBarber);
     }

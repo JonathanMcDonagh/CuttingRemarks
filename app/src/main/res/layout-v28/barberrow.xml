@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_activated">
+
+    android:background="@color/bgcolor">
 
     <ImageView
         android:id="@+id/rowFavouriteImg"
@@ -16,7 +17,7 @@
         android:layout_marginTop="8dp"
         android:contentDescription="fav"
         android:gravity="center_vertical"
-        android:src="@drawable/nonfavourite"
+        android:src="@drawable/star"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +51,7 @@
         android:gravity="center_vertical"
         android:text="Barber Name"
         android:textAlignment="viewStart"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorFontWhite"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +72,7 @@
         android:gravity="center_vertical"
         android:text="Barber Shop"
         android:textAlignment="viewStart"
-        android:textColor="@color/colorFontBlack"
+        android:textColor="@color/colorFontWhite"
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +93,7 @@
         android:gravity="center_vertical"
         android:text="5.0 *"
         android:textAlignment="viewStart"
-        android:textColor="@color/colorFontBlack"
+        android:textColor="@color/colorFontWhite"
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +114,7 @@
         android:gravity="center_vertical"
         android:text="€3.99"
         android:textAlignment="viewStart"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorFontWhite"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

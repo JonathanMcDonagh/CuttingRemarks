@@ -8,37 +8,22 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.bumptech.glide.annotation.GlideExtension;
-import com.bumptech.glide.annotation.GlideModule;
-import com.bumptech.glide.annotation.GlideOption;
-import com.bumptech.glide.annotation.GlideType;
-import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.widget.ProfilePictureView;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import ie.cr.R;
 import ie.cr.fragments.AddFragment;
 import ie.cr.fragments.BarberFragment;
-import ie.cr.fragments.CalendarFragment;
 import ie.cr.fragments.EditFragment;
-import ie.cr.fragments.HairstylesFragment;
 import ie.cr.fragments.MapFragment;
 import ie.cr.fragments.SearchFragment;
 import ie.cr.main.CuttingRemarksApp;
+
 
 public class Home extends Base
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -47,23 +32,13 @@ public class Home extends Base
     FragmentTransaction ft;
 
     public static CuttingRemarksApp app = CuttingRemarksApp.getInstance();
-    public AlertDialog loader;
-
-    public GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
-
-
-    private Button yourGalleryBtn;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-
-        //  thelogoutbtn = (Button) findViewById(R.id.logoutbtn);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -72,10 +47,7 @@ public class Home extends Base
             finish();
             startActivity(new Intent(this, Login.class ));
         }
-
         FirebaseUser user = mAuth.getCurrentUser();
-
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -95,10 +67,6 @@ public class Home extends Base
         //app.dbManager.setupBarbers();
         this.setTitle(R.string.recentlyViewedLbl);
     }
-
-
-
-
 
     //If back button is pressed when nav drawer is opened it closes the nav drawer
     @Override
@@ -155,23 +123,6 @@ public class Home extends Base
             ft.addToBackStack(null);
             ft.commit();
         }
-/*
-        } else if(id == R.id.nav_hairstyles){
-            fragment = HairstylesFragment.newInstance();
-            ft.replace(R.id.homeFrame, fragment);
-            ft.addToBackStack(null);
-            ft.commit();
-
-        } else if(id == R.id.nav_calender) {
-            fragment = CalendarFragment.newInstance();
-            ft.replace(R.id.homeFrame, fragment);
-            ft.addToBackStack(null);
-            ft.commit();
-
-        }else if (id == R.id.nav_camera) {
-            startActivity(new Intent(this, Camera.class));
-        }*/
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -179,19 +130,18 @@ public class Home extends Base
     }
 
 
+    //Starts Gallery Activity
     public void onStart() {
         super.onStart();
         Button viewBtn = findViewById(R.id.viewGallerybtn);
         viewBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
-                Intent intent = new Intent(Home.this, Camera.class);
+                Intent intent = new Intent(Home.this, Gallery.class);
                 startActivity(intent);
             }
 
         });
     }
-
 
     //When a barber is clicked allows user to edit the barber rating
     @Override
@@ -212,6 +162,5 @@ public class Home extends Base
             editFrag.saveBarber(v);
         }
     }
-
 
 }

@@ -30,4 +30,5 @@ public class Barber implements Serializable
 		return barberId + " " + barberName + ", " + shop + ", " + rating
 				+ ", " + price + ", fav =" + favourite;
 	}
+
 }
