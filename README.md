@@ -1,12 +1,12 @@
 # CuttingRemarks - Assignment
-Cutting Remarks (Barber Rating Android App) Version 2 allows users to add a barber's name, add the barber shop, add the price and add a rating, it also allows the user to search particular barbers, add their own hairstyles or future haircuts and view barbers near you.
+**Cutting Remarks (Barber Rating Android App) Version 2:** 
+This app allows users to add a barber's name, add the barber shop, add the price of the haircut, and add a rating. It also allows the user to search particular barbers, add their own hairstyles, or add future haircut styles to a gallery that can be shown to their barber. The users can also view barbers on a map.
 
 Name: Jonathan McDonagh
 
 BSc (Hons) in Software Systems Development - Year 4 Semester 1
 
 **Grade:** 62%  
-
 
 # References
 Facebook Login:
